@@ -17,6 +17,16 @@ function magicFinderOpen ( window ) {
 
   if ( !title || /(Quick Look)|(About Finder)|(Finder Preferences)|( Info$)/.test ( title ) ) return;
 
-  setFrame ( 'bottom-left', window );
+  // setFrame ( 'top-left', window );
+  const frame = window.frame ();
+
+  window.setFrame ({
+    x: frame.x,
+    y: frame.y,
+    width: CENTER_WIDTH,
+    height: CENTER_HEIGHT
+  });
+
+  center_window ( window );
 
 }
